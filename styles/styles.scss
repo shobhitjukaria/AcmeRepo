@@ -1,0 +1,264 @@
+@import './variables.scss';
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    &--header {
+        background: $primary-black;
+        color: $primary-white;
+        position: relative;
+        text-align: center;
+        @media screen and (max-width: 280px) {
+            width: 100%;
+        }
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+        }
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+        }
+        @media screen and (max-width: $medium-screen) {
+            width: 100%;
+        }
+        &-img {
+            min-height: 450px;
+            background: url(../assets/pexels-photo-248515.png);
+            opacity: 0.3;
+            background-size: cover;
+        }
+        &-text {
+            position: absolute;
+            top: 10%;
+            left: 23%;
+            @media screen and (max-width: 300px) {
+                top: 0%;
+                left: 4%;
+            }
+            @media screen and (max-width: $mobile) and (min-width: 301px) {
+                top: 10%;
+                padding: 0;
+                left: 4%;
+                padding: 1em;
+            }
+            @media screen and (max-width: $tablet) and (min-width: $mobile) {
+                top: 25%;
+                left: 4%;
+                padding: 1em;
+            }
+            @media screen and (max-width: $medium-screen) and (min-width: $tablet) {
+                top: 20%;
+                left: 0;
+                padding: 1em 3em;
+            }
+            @media screen and (min-width: $medium-screen) {
+                top: 20%;
+                left: 12%;
+                padding: 1em 3em;
+            }
+            h1 {
+                padding: 0.5em;
+                font-size: 2.2em;
+            }
+            p {
+                padding: 0 10em 1em 10em;
+                font-size: $font-small;
+                line-height: 1.5em;
+                @media screen and (max-width: 300px) {
+                    padding: 1em;
+                }
+                @media screen and (max-width: $mobile) and (min-width: 301px) {
+                    padding: 0 1em;
+                }
+                @media screen and (max-width: $tablet) and (min-width: $mobile) {
+                    padding: 0 1em;
+                }
+                @media screen and (max-width: $medium-screen) and (min-width: $tablet) {
+                    padding: 0 1em;
+                }
+                @media screen and (min-width: $medium-screen) {
+                    padding: 1em 3em;
+                }
+            }
+            .btn {
+                display: inline-block;
+                background: $primary-black;
+                color: $primary-white;
+                padding: 1.2em 2em;
+                border: 1px solid $color-border;
+                margin: 0.5em 0;
+                font-size: $font-small;
+                text-decoration: none;
+                &:hover {
+                    background: $primary-white;
+                    color: $primary-black;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    &--main {
+        text-align: center;
+        background: $color-bg;
+        &-heading {
+            display: inline;
+            h2 {
+                padding: 1em 0 1em 0;
+                font-size: 26.4px;
+                @media screen and (max-width: $tablet) {
+                    padding: 1em;
+                }
+            }
+        }
+        &-content {
+            justify-content: space-around;
+            text-align: center;
+            display: flex;
+            padding: 1em 18em 2.5em 20em;
+            text-align: justify;
+            flex-wrap: wrap;
+            @media screen and (max-width: $mobile) {
+                padding: 2em;
+            }
+            @media screen and (max-width: $tablet) {
+                padding: 2em;
+            }
+            @media screen and (max-width: $medium-screen) {
+                padding: 1em 2em 2.5em 2em;
+            }
+            &-article {
+                width: 45%;
+                font-size: $font-small;
+                line-height: 28px;
+                @media screen and (max-width: $mobile) {
+                    width: 100%;
+                }
+                @media screen and (max-width: $tablet) {
+                    width: 100%;
+                }
+                @media screen and (max-width: $medium-screen) {
+                    width: 45%;
+                }
+            }
+        }
+    }
+    &--card-container {
+        padding: 2em 20em;
+        display: flex;
+        justify-content: space-around;
+        background: $primary-black;
+        text-align: center;
+        flex-wrap: wrap;
+        @media screen and (max-width: $mobile) {
+            padding: 1em;
+        }
+        @media screen and (max-width: $tablet) {
+            padding: 1em;
+        }
+        @media screen and (max-width: $medium-screen) {
+            padding: 1em;
+        }
+        &-card {
+            width: 31%;
+            background: $primary-white;
+            padding-bottom: 20px;
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            @media screen and (max-width: $tablet) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            img {
+                width: 100%;
+            }
+            &-heading {
+                padding: 2em 0;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            &-text {
+                padding: 0 1.5em;
+                font-size: $font-small;
+                line-height: 1.5em;
+                margin: 10px 0;
+            }
+        }
+    }
+    &--info {
+        text-align: center;
+        padding: 3em 15em;
+        @media screen and (max-width: $mobile) {
+            padding: 2em;
+            margin-top: 10px;
+        }
+        @media screen and (max-width: $tablet) {
+            padding: 1em;
+            margin-top: 10px;
+        }
+        @media screen and (max-width: $medium-screen) {
+            padding: 1em 0;
+            margin-top: 10px;
+        }
+        h1 {
+            font-size: 26.4px;
+        }
+        p {
+            font-size: 17.6px;
+            line-height: 28px;
+            text-align: center;
+            padding: 2em 5em;
+            @media screen and (max-width: $mobile) {
+                padding: 1.5em;
+            }
+            @media screen and (max-width: $tablet) {
+                padding: 1.5em;
+            }
+        }
+    }
+    &--contact {
+        display: flex;
+        color: $primary-white;
+        background: $primary-black;
+        text-align: center;
+        flex-wrap: wrap;
+        &-about {
+            width: 50%;
+            padding: 0 1em;
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+            }
+            @media screen and (max-width: $tablet) {
+                width: 100%;
+            }
+            @media screen and (max-width: $medium-screen) {
+                padding: 0;
+            }
+            @media screen and (min-width: $medium-screen) {
+                padding: 0;
+            }
+            &-heading {
+                padding: 3.5em 3em;
+                font-size: $font-small;
+                line-height: 1.5em;
+            }
+            p {
+                padding: 1.5em 1em;
+                font-size: $font-small;
+                line-height: 1.5em;
+            }
+            &:hover {
+                background: $primary-blue;
+            }
+        }
+    }
+    footer {
+        background: #000;
+        color: white;
+        display: flex;
+        justify-content: space-around;
+        padding: 2em;
+    }
+}
