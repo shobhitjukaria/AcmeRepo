@@ -1,85 +1,32 @@
-@import './variables.scss';
+@import "./_variables";
+@import "./mixins";
 * {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
 
 .wrapper {
-    &--header {
-        background: $primary-black;
+    &__header {
         color: $primary-white;
-        position: relative;
-        text-align: center;
-        @media screen and (max-width: 280px) {
-            width: 100%;
-        }
-        @media screen and (max-width: $mobile) {
-            width: 100%;
-        }
-        @media screen and (max-width: $tablet) {
-            width: 100%;
-        }
-        @media screen and (max-width: $medium-screen) {
-            width: 100%;
-        }
-        &-img {
-            min-height: 450px;
-            background: url(../assets/pexels-photo-248515.png);
-            opacity: 0.3;
-            background-size: cover;
-        }
-        &-text {
-            position: absolute;
-            top: 10%;
-            left: 23%;
-            @media screen and (max-width: 300px) {
-                top: 0%;
-                left: 4%;
-            }
-            @media screen and (max-width: $mobile) and (min-width: 301px) {
-                top: 10%;
-                padding: 0;
-                left: 4%;
-                padding: 1em;
-            }
-            @media screen and (max-width: $tablet) and (min-width: $mobile) {
-                top: 25%;
-                left: 4%;
-                padding: 1em;
-            }
-            @media screen and (max-width: $medium-screen) and (min-width: $tablet) {
-                top: 20%;
-                left: 0;
-                padding: 1em 3em;
-            }
-            @media screen and (min-width: $medium-screen) {
-                top: 20%;
-                left: 12%;
-                padding: 1em 3em;
+        @include center();
+        background: url(../assets/pexels-photo-248515.png);
+        background-size: cover;
+        min-height: 450px;
+        &--text {
+            width: 55%;
+            margin: auto;
+            @media screen and (max-width: $ipad) {
+                width: 85%;
             }
             h1 {
-                padding: 0.5em;
+                padding: 3em 0 0.7em 0;
                 font-size: 2.2em;
+                @media screen and (max-width: $ipad) {
+                    line-height: 1.5em;
+                }
             }
             p {
-                padding: 0 10em 1em 10em;
-                font-size: $font-small;
-                line-height: 1.5em;
-                @media screen and (max-width: 300px) {
-                    padding: 1em;
-                }
-                @media screen and (max-width: $mobile) and (min-width: 301px) {
-                    padding: 0 1em;
-                }
-                @media screen and (max-width: $tablet) and (min-width: $mobile) {
-                    padding: 0 1em;
-                }
-                @media screen and (max-width: $medium-screen) and (min-width: $tablet) {
-                    padding: 0 1em;
-                }
-                @media screen and (min-width: $medium-screen) {
-                    padding: 1em 3em;
-                }
+                @include small-font();
             }
             .btn {
                 display: inline-block;
@@ -87,8 +34,8 @@
                 color: $primary-white;
                 padding: 1.2em 2em;
                 border: 1px solid $color-border;
-                margin: 0.5em 0;
-                font-size: $font-small;
+                margin: 1.5em 0;
+                @include small-font();
                 text-decoration: none;
                 &:hover {
                     background: $primary-white;
@@ -98,156 +45,116 @@
             }
         }
     }
-    &--main {
-        text-align: center;
+    &__main {
+        @include center();
         background: $color-bg;
-        &-heading {
+        &--heading {
             display: inline;
             h2 {
-                padding: 1em 0 1em 0;
-                font-size: 26.4px;
-                @media screen and (max-width: $tablet) {
-                    padding: 1em;
-                }
+                padding: 1em 0 0.7em 0;
+                font-size: 1.7em;
+                line-height: 1.7em;
             }
         }
-        &-content {
-            justify-content: space-around;
-            text-align: center;
-            display: flex;
-            padding: 1em 18em 2.5em 20em;
-            text-align: justify;
-            flex-wrap: wrap;
-            @media screen and (max-width: $mobile) {
-                padding: 2em;
+        &--content {
+            @include display-flex();
+            @media screen and (max-width: $ipad) {
+                padding: 1.5em 0;
             }
-            @media screen and (max-width: $tablet) {
-                padding: 2em;
-            }
-            @media screen and (max-width: $medium-screen) {
-                padding: 1em 2em 2.5em 2em;
-            }
-            &-article {
-                width: 45%;
-                font-size: $font-small;
-                line-height: 28px;
-                @media screen and (max-width: $mobile) {
-                    width: 100%;
-                }
-                @media screen and (max-width: $tablet) {
-                    width: 100%;
-                }
-                @media screen and (max-width: $medium-screen) {
+            &_article {
+                width: 27%;
+                @include small-font();
+                padding: 0.5em;
+                margin-bottom: 3em;
+                @media screen and (max-width: $ipad) {
                     width: 45%;
                 }
+                @media screen and (max-width: $tablet) {
+                    width: 90%;
+                    padding: 0;
+                    margin: 0;
+                }
             }
         }
     }
-    &--card-container {
-        padding: 2em 20em;
-        display: flex;
-        justify-content: space-around;
+    &__card_container {
         background: $primary-black;
-        text-align: center;
-        flex-wrap: wrap;
-        @media screen and (max-width: $mobile) {
+        @include display-flex();
+        @media screen and (max-width: $ipad) {
             padding: 1em;
         }
-        @media screen and (max-width: $tablet) {
-            padding: 1em;
-        }
-        @media screen and (max-width: $medium-screen) {
-            padding: 1em;
-        }
-        &-card {
-            width: 31%;
+        &--card {
+            width: 18%;
             background: $primary-white;
-            padding-bottom: 20px;
-            @media screen and (max-width: $mobile) {
-                width: 100%;
-                margin-bottom: 10px;
+            padding-bottom: 1.5em;
+            margin: 2em 0.7em;
+            @media screen and (max-width: $ipad) {
+                width: 27%;
             }
             @media screen and (max-width: $tablet) {
                 width: 100%;
-                margin-bottom: 10px;
+                margin: 0.5em 0.2em;
             }
-            img {
+            &_image {
                 width: 100%;
+                img {
+                    width: 100%;
+                }
             }
-            &-heading {
-                padding: 2em 0;
-                font-size: 20px;
-                font-weight: bold;
+            &_heading {
+                padding: 2.2em 0;
+                font-size: 1.3em;
+                font-weight: 500;
             }
-            &-text {
+            &_text {
                 padding: 0 1.5em;
-                font-size: $font-small;
-                line-height: 1.5em;
-                margin: 10px 0;
+                @include small-font();
+                margin-bottom: 0.5em;
             }
         }
     }
-    &--info {
-        text-align: center;
-        padding: 3em 15em;
-        @media screen and (max-width: $mobile) {
-            padding: 2em;
-            margin-top: 10px;
-        }
-        @media screen and (max-width: $tablet) {
-            padding: 1em;
-            margin-top: 10px;
-        }
-        @media screen and (max-width: $medium-screen) {
-            padding: 1em 0;
-            margin-top: 10px;
+    &__info {
+        @include center();
+        width: 100%;
+        @media screen and (max-width: $ipad) {
+            width: 90%;
+            margin: auto;
         }
         h1 {
-            font-size: 26.4px;
+            font-size: 1.6em;
+            margin: 2.5em 0;
         }
         p {
-            font-size: 17.6px;
-            line-height: 28px;
-            text-align: center;
-            padding: 2em 5em;
-            @media screen and (max-width: $mobile) {
-                padding: 1.5em;
-            }
-            @media screen and (max-width: $tablet) {
-                padding: 1.5em;
+            @include small-font();
+            width: 59%;
+            margin: auto;
+            margin-bottom: 3em;
+            @media screen and (max-width: $ipad) {
+                width: 90%;
             }
         }
     }
-    &--contact {
-        display: flex;
-        color: $primary-white;
+    &__contact {
         background: $primary-black;
-        text-align: center;
-        flex-wrap: wrap;
-        &-about {
+        color: $primary-white;
+        @include display-flex();
+        &--about {
             width: 50%;
-            padding: 0 1em;
-            @media screen and (max-width: $mobile) {
-                width: 100%;
-            }
             @media screen and (max-width: $tablet) {
                 width: 100%;
             }
-            @media screen and (max-width: $medium-screen) {
-                padding: 0;
-            }
-            @media screen and (min-width: $medium-screen) {
-                padding: 0;
-            }
-            &-heading {
-                padding: 3.5em 3em;
-                font-size: $font-small;
-                line-height: 1.5em;
+            &_heading {
+                padding: 3em 0em;
+                @include small-font();
             }
             p {
-                padding: 1.5em 1em;
-                font-size: $font-small;
-                line-height: 1.5em;
+                padding: 1em;
+                @include small-font();
+                padding-bottom: 1.5em;
+            }
+            &_email {
+                @include small-font();
+                padding-bottom: 3em;
             }
             &:hover {
                 background: $primary-blue;
@@ -255,10 +162,15 @@
         }
     }
     footer {
+        font-size: $font-small;
         background: #000;
         color: white;
         display: flex;
         justify-content: space-around;
         padding: 2em;
+        @media screen and (max-width: $tablet) {
+            display: block;
+            @include center();
+        }
     }
 }
